@@ -1,0 +1,20 @@
+default = {"S3_FILE_NAME": "","CONFIG": {}}
+
+"infinia/tpsa": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"infinia/solana": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"monteverde/erregebe": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"sifty-demo/fruits-demo": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"torres/hivimar": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"scharff/iberotex": {"S3_FILE_NAME": "","CONFIG": {"dpi": 400}}
+"roma-andrade/hongkong-yx": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"ecs360/fujikura": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"carga-aerea/gsb": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"carga-aerea/jamesway": {"S3_FILE_NAME": "","CONFIG": {"dpi": 400}}
+"paublete/partida-hs-desc": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"casor/nissan_a": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"casor/nissan_c": {"S3_FILE_NAME": "","CONFIG": {"dpi": 400}}
+"scharff/scania": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"zulueta/ningbo": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true}}
+"zulueta/wenzhou": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"zulueta/hanna": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
+"bt/mastermedia": {"S3_FILE_NAME": "","CONFIG": {"removeBorders": true,"dpi": 400}}
