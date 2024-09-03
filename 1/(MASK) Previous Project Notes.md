@@ -1,0 +1,144 @@
+
+This code is focused on generating masks for images, specifically by detecting and padding the borders of lines within the images, likely for preprocessing purposes such as OCR (Optical Character Recognition). Below, I’ll break down the code’s functionality and discuss how you can integrate PyTorch to train a model using these masks.
+
+**Utility Functions:**
+   ```python
+   def pil2bytes(image_in_PIL):
+       return image_in_PIL.tobytes()
+
+   def bytes2pil(image_in_bytes):
+       return Image.open(io.BytesIO(image_in_bytes))
+   ```
+
+   - **pil2bytes(image_in_PIL):** Converts a PIL Image to a byte array.
+   - **bytes2pil(image_in_bytes):** Converts a byte array back to a PIL Image.
+   - These are general utilities for converting between image formats, particularly useful when working with image data in different formats.
+
+ **Detecting/Padding Line Segments? I think*
+   ```python
+   def get_1s(array):
+       array_clip = np.clip(array, a_min=0, a_max=1)
+       a_str = ''.join([str(num) for num in np.squeeze(array_clip)])
+       matched = [m.span() for m in re.finditer(r'(1+)', a_str)]
+       return matched
+
+   def pad_start_n_end(s, e, min_index, max_index, padding):
+       if int(padding) < 0:
+           padding = 0
+
+       new_s = int(s) - int(padding)
+       new_e = int(e) + int(padding)
+
+       if new_s < min_index:
+           new_s = min_index
+
+       if new_e > max_index:
+           new_e = max_index
+
+       return new_s, new_e
+
+   def pad_array_index(arr, padding=0):
+       array = np.squeeze(arr)
+       max_index = len(array)
+       min_index = 0
+
+       matched = get_1s(array)
+       padded = [pad_start_n_end(s, e, min_index, max_index, padding) for s, e in matched]
+
+       return padded
+
+   def pad_by_pixel_arrays(pixel_array, pad=0):
+       pixel_array_copy = pixel_array.copy()
+       ii_list = pad_array_index(pixel_array_copy, padding=pad)
+       if ii_list == []:
+           return pixel_array
+       else:
+           ii = np.hstack([np.arange(s, e) for s, e in ii_list])
+           np.put(pixel_array_copy, ind=ii, v=[255 for i in range(len(ii))])  # 255 for white
+
+           return pixel_array_copy
+   ```
+
+   - **get_1s(array):** Identifies continuous segments of "1s" in a binary array, likely corresponding to detected lines in an image.
+   - **pad_start_n_end(s, e, min_index, max_index, padding):** Adjusts the start (`s`) and end (`e`) indices of a detected segment by applying padding, ensuring the indices remain within valid bounds.
+   - **pad_array_index(arr, padding=0):** Applies padding to detected segments in an array, expanding their range.
+   - **pad_by_pixel_arrays(pixel_array, pad=0):** Uses `pad_array_index` to pad detected segments within a pixel array, setting the pixels in the padded range to white (value 255).
+
+4. **Padding Detected Edges:**
+   ```python
+   def paded_edge_matrix(edge_matrix, axis=0, padding=0):
+       m = edge_matrix
+       if axis == 0:
+           return np.vstack([pad_by_pixel_arrays(row, pad=padding) for row in m])
+       elif axis == 1:
+           return np.vstack([pad_by_pixel_arrays(col, pad=padding) for col in m.T]).T
+   ```
+
+   - **paded_edge_matrix(edge_matrix, axis=0, padding=0):** Applies padding to detected edges along the specified axis (0 for rows, 1 for columns).
+
+5. **Generating the Border Mask:**
+   ```python
+   def generate_border_mask(image, padding=1, threshold_value=128):
+       img_np = np.array(image)
+       img_np = img_np.astype(np.uint8)
+       img = cv2.cvtColor(img_np, cv2.COLOR_BGR2GRAY)
+
+       _, img_bin = cv2.threshold(img, threshold_value, 255, cv2.THRESH_BINARY)
+       img_bin = 255 - img_bin
+
+       kernel_len = np.array(img).shape[1] // 100
+       ver_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, kernel_len))
+       hor_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (kernel_len, 1))
+
+       image_1 = cv2.erode(img_bin, ver_kernel, iterations=3)
+       vertical_lines = cv2.dilate(image_1, ver_kernel, iterations=3)
+
+       image_2 = cv2.erode(img_bin, hor_kernel, iterations=3)
+       horizontal_lines = cv2.dilate(image_2, hor_kernel, iterations=3)
+
+       new_vertical_lines = paded_edge_matrix(vertical_lines, padding=padding, axis=0)
+       new_horizontal_lines = paded_edge_matrix(horizontal_lines, padding=padding, axis=1)
+
+       img_vh = cv2.addWeighted(new_horizontal_lines, 1, new_vertical_lines, 1, 0.0)
+
+       _, border_mask = cv2.threshold(img_vh, threshold_value, 255, cv2.THRESH_BINARY)
+
+       return Image.fromarray(np.uint8(border_mask))
+   ```
+
+   - **generate_border_mask(image, padding=1, threshold_value=128):**
+     - Converts the input image to grayscale and then binarizes it.
+     - Inverts the binary image.
+     - Detects vertical and horizontal lines using morphological operations (erosion and dilation).
+     - Pads the detected lines and combines them to create a mask.
+     - The final binary mask is generated by thresholding the combined image.
+     - **Output:** The function returns a binary mask as a PIL Image, where the grid lines have been highlighted or removed.
+
+6. **Applying the Mask Generation to a List of Images:**
+   ```python
+   image_list = os.listdir('C:\\Users\\BDowt\\OneDrive\\Dokumenter\\Brief One Files\\invoices\\invoices')
+
+   def get_mask(image_name):
+       print(image_name)
+       image_path = 'C:\\Users\\BDowt\\OneDrive\\Dokumenter\\Brief One Files\\invoices\\invoices\\' + image_name
+       image = Image.open(image_path)
+       resulting_mask = generate_border_mask(image, padding=1, threshold_value=128)
+       resulting_mask_name = 'C:\\Users\\BDowt\\OneDrive\\Dokumenter\\Brief One Files\\invoices\\invoices\\' + image_name
+       resulting_mask.save(resulting_mask_name)
+
+   list(map(get_mask, image_list))
+   ```
+
+   - **get_mask(image_name):** 
+     - Loads an image by its name, generates a border mask, and saves the resulting mask with the same name.
+   - **list(map(get_mask, image_list)):** Applies the `get_mask` function to all images in the directory, generating and saving masks for each.
+
+7. **Example Usage:**
+   ```python
+   image = Image.open('roma_andrade.png')
+   resulting_mask = generate_border_mask(image, padding=1, threshold_value=128)
+   resulting_mask.show()
+   ```
+
+   - This code snippet demonstrates generating and displaying a mask for a single image (`roma_andrade.png`).
+

@@ -9,4 +9,3 @@ Here is a brief description of each file/folder:
 4.) removeBorders.py: This contains the removeBorders algorithm.  
 5.) tesserocr.ipynb: This shows you how to use TesseractOCR so you can see how well your algorithm performs.  
   
-xxx

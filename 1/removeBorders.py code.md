@@ -7,8 +7,6 @@ Process:
 - **Padding:** Apply padding to the detected lines to ensure complete removal.
 - **Combine and Output:** Merge the processed image with the original to maintain as much of the text as possible while removing the grids.
 
-
-
 ```python
 from PIL import Image
 import cv2
@@ -22,7 +20,12 @@ def get_1s(array):
     matched = [m.span() for m in re.finditer(r'(1+)', a_str)]
     return matched
 ```
-
+- - **Purpose:** This function identifies sequences of "1s" in a binary array, which likely represents lines or other features in the image.
+    - **How it works:**
+        - The array is first clipped between 0 and 1 to ensure binary values.
+        - The binary array is converted into a string of 0s and 1s.
+        - Regular expressions (`re.finditer`) are used to find sequences of "1s", and their start and end indices are recorded.
+    - **Output:** Returns a list of tuples indicating the start and end indices of sequences of "1s".
 
 ```python 
 def pad_start_n_end(s, e, min_index, max_index, padding):
@@ -41,7 +44,11 @@ def pad_start_n_end(s, e, min_index, max_index, padding):
 
     return new_s, new_e
 ```
-
+- **Purpose:** To adjust the start (`s`) and end (`e`) indices of a sequence, applying padding while ensuring the indices stay within valid bounds.
+    - **How it works:**
+        - Padding is added to both the start and end indices.
+        - If padding pushes the start or end beyond the minimum or maximum allowed indices, they are clamped to stay within valid bounds.
+    - **Output:** Returns the new, adjusted start and end indices.
 ```python
 def pad_array_index(arr, padding=0):
     array = np.squeeze(arr)
@@ -55,7 +62,11 @@ def pad_array_index(arr, padding=0):
     return padded
 
   ```
-  
+  - **Purpose:** This function pads detected sequences of "1s" within an array, expanding their range.
+- **How it works:**
+    - It first flattens the array and then finds all sequences of "1s" using `get_1s`.
+    - For each sequence, the start and end indices are adjusted using `pad_start_n_end`.
+- **Output:** A list of padded start and end indices.
   
 ```python
 def pad_by_pixel_arrays(pixel_array, pad=0):
@@ -68,7 +79,12 @@ def pad_by_pixel_arrays(pixel_array, pad=0):
         np.put(pixel_array_copy, ind=ii, v=[255 for i in range(len(ii))]) # 255 for white
         return pixel_array_copy # padded_pixel_array
 ```
-
+- **Purpose:** Applies padding to specific pixel sequences (typically representing lines) within a pixel array.
+- **How it works:**
+    - Copies the input array.
+    - Uses `pad_array_index` to get padded indices.
+    - Modifies the pixel array, setting the pixels in the padded range to white (value 255).
+- **Output:** Returns the modified pixel array with padded areas.
 
 ```python
 def paded_edge_matrix(edge_matrix, axis = 0, padding=0 ):
@@ -85,7 +101,11 @@ def paded_edge_matrix(edge_matrix, axis = 0, padding=0 ):
     else:
         print(f'axis is "{axis}", not 0 or 1!')
 ```
-
+- **Purpose:** Applies padding to the detected edges (either vertical or horizontal) within the image.
+- **How it works:**
+    - Iterates over rows or columns (depending on the axis) of the `edge_matrix`.
+    - Applies `pad_by_pixel_arrays` to each row/column to pad the edges.
+- **Output:** Returns the padded edge matrix.
   
 ```python
 def remove_grids_from_image_v2(image, padding = 1):
@@ -122,3 +142,24 @@ def remove_grids_from_image_v2(image, padding = 1):
 SLNZVJ!!!ammoforodium
     return img_sum
 ```
+- **Purpose:** Main function to process an image and remove grid lines that might interfere with text recognition.
+- **How it works:**
+    - Converts the image to grayscale.
+    - Binarizes the image using Otsu's thresholding method.
+    - Detects vertical and horizontal lines using morphological operations (erosion followed by dilation).
+    - Pads the detected lines using `paded_edge_matrix`.
+    - Combines the padded lines with the original image to produce a final image with grid lines removed.
+- **Output:** Returns a processed image with grids removed, suitable for text recognition.
+
+***Things to note / ASK : ***
+
+- **Morphological Operations:**
+    
+    - The code uses erosion and dilation to detect vertical and horizontal lines. Erosion reduces the lines to a minimum width, and dilation restores them while keeping noise minimal.
+- **Padding Logic:**
+    
+    - The padding functions ensure that lines are not just removed but their surrounding pixels are also cleared, which prevents small remnants of lines from affecting text recognition.
+- **Regular Expressions in `get_1s`:**
+
+    - Regular expressions are cleverly used to detect continuous sequences of "1s" in the binary array, which are interpreted as features (e.g., lines) that need to be processed.
+
