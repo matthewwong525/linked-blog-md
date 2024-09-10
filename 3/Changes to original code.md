@@ -1,0 +1,3 @@
+- Updated the outdated  ==pretrained = true== variable with ==weights==. 
+- ```criterion = nn.BCEWIthLogitsLoss``` instead of MSE loss - to see if it works with binary segmentation. 
+- Output resize - ```outputs = torch.nn.functional.interpolate(outputs, size=masks.shape[-2:], mode='bilinear', align_corners=False)``` - This was a debugging step 
