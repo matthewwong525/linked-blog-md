@@ -1,0 +1,1 @@
+<iframe src="<% tp.system.clipboard() %>"><% tp.file.cursor() %></iframe>

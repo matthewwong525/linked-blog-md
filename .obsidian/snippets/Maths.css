@@ -1,0 +1,23 @@
+.math {
+  font-size: 1em;
+  line-height: 0.833333;
+}
+
+/* increase line spacing between equations */
+.math-block mjx-mtr:not(:first-child) mjx-mtd {
+  padding-top: 1em !important;
+}
+
+
+
+/* .MJX-TEX,
+.MJX-TEX * {
+  font-family: 'Source Serif 4' !important;
+  letter-spacing: -0.06px !important;
+}
+
+.mjx-i {
+  font-family: 'Source Serif 4' !important;
+  letter-spacing: -0.06px !important;
+}
+ */

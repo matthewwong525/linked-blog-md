@@ -1,0 +1,64 @@
+/*
+  Editing View - add padding to top of headers (except first header)
+*/
+.cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: 3em;
+}
+
+
+.cm-contentContainer > div .HyperMD-header.cm-line:is(:first-of-type) {
+  padding-top: 1em;
+}
+
+/*
+  Editing View - add padding to bottom of all headers
+*/
+.markdown-source-view.mod-cm6 .cm-content>.HyperMD-header {
+  padding-bottom: 1em !important;
+}
+
+/*
+  Editing View - remove top padding from headers that are immediately after another header
+*/
+.markdown-source-view.mod-cm6 .cm-content>.HyperMD-header+.HyperMD-header {
+  padding-top: 0 !important;
+}
+
+
+/*
+  Reading View - add margin to top of headers
+*/
+.markdown-reading-view .markdown-rendered div+div> :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 3em !important;
+}
+
+/* Im not sure what this does */
+.markdown-reading-view .markdown-rendered div[class^='el-h']+div[class^='el-h']> :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: unset !important;
+}
+
+/*
+  Reading View - add bottom margin to the page header
+*/
+.markdown-reading-view .markdown-rendered .mod-header {
+  margin-bottom: 3em;
+}
+
+/* --------------------------------------------   */
+/* Remove top padding from lists
+/* --------------------------------------------   */
+.markdown-rendered .el-p + .el-ol > ol,
+.markdown-rendered .el-p + .el-ul > ul {
+  margin-block-start: -1.5em;
+}
+
+/* remove top padding from lists in callouts if it is the first element */
+.markdown-rendered .callout > .callout-content > ol,
+.markdown-rendered .callout > .callout-content > ul {
+  margin-block-start: 1em;
+}
+
+/* reset the upper margin for nested lists  */
+.markdown-rendered ul ul, .markdown-rendered ol ol {
+  margin-block-start: inherit;
+}

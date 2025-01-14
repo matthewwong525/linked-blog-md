@@ -1,0 +1,23 @@
+/* --------------------------------------------   */
+/* Scroll long lines of code in read mode
+/* --------------------------------------------   */
+
+/* un-wrap codeblock in edit mode */
+/* .HyperMD-codeblock {
+  white-space: nowrap;
+}
+*/
+
+ /* scroll codeblock in read mode */
+.markdown-reading-view code[class*='language-'],
+.cm-preview-code-block code[class*='language-'] {
+  overflow-x: scroll;
+  white-space: pre;
+  padding: 15px 0px;
+}
+
+/* wrap codeblock in read mode */
+.codewrapOff + .markdown-reading-view code[class*='language-'],
+.codewrapOff + .cm-preview-code-block code[class*='language-'] {
+  white-space: pre-wrap !important;
+}

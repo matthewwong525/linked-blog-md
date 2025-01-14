@@ -1,0 +1,79 @@
+/* Tag styles */
+.cm-hashtag {
+  color: var(--tag-color);
+  background-color: var(--tag-background);
+  border: var(--tag-border-width) solid var(--tag-border-color);
+  font-size: var(--tag-size);
+  font-weight: var(--tag-weight);
+  vertical-align: baseline;
+  border-inline-start: none;
+  border-inline-end: none;
+  padding-top: var(--tag-padding-y);
+  padding-bottom: var(--tag-padding-y);
+}
+
+.cm-hashtag.cm-hashtag-begin {
+  border-start-start-radius: var(--tag-radius);
+  border-end-start-radius: var(--tag-radius);
+  border-inline-end: none;
+  border-inline-start: var(--tag-border-width) solid var(--tag-border-color);
+  padding-inline-start: var(--tag-padding-x);
+}
+
+a.tag {
+  background-color: var(--tag-background);
+  border: var(--tag-border-width) solid var(--tag-border-color);
+  border-radius: var(--tag-radius);
+  color: var(--tag-color);
+  font-size: var(--tag-size);
+  font-weight: var(--tag-weight);
+  text-decoration: var(--tag-decoration);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  line-height: 1;
+}
+
+/* --------------------------------------------   */
+/* Default Tags
+/* --------------------------------------------   */
+.cm-hashtag, a.tag {
+  --tag-weight: 700;
+  --tag-padding-y: 4px;
+  --tag-padding-x: 5px;
+  --tag-size: 0.9em;
+  --tag-radius: 5px;
+}
+
+a.tag:hover {
+  --tag-background-hover: rgb(250, 227, 241, 0.5);
+}
+
+/* --------------------------------------------   */
+/* Green Tags
+/* --------------------------------------------   */
+.greenTag .cm-hashtag,
+.greenTag a.tag {
+  --tag-color: rgb(70, 189, 196);
+  --tag-background: rgb(237, 248, 249);
+  --tag-border-color: none;
+}
+
+/* --------------------------------------------   */
+/* Muted Tags
+/* --------------------------------------------   */
+.mutedTag .cm-hashtag,
+.mutedTag a.tag {
+  --tag-color: rgba(14, 55, 58, 0.6);
+  --tag-background: rgb(240, 244, 244);
+  --tag-border-color: rgba(0, 0, 0, 0);
+}
+
+/* --------------------------------------------   */
+/* Pink Tags
+/* --------------------------------------------   */
+.pinkTag .cm-hashtag,
+.pinkTag a.tag {
+  --tag-color: #DA9EEF;
+  --tag-background: rgb(248, 238, 252, 0.2);
+  --tag-border-color: rgba(218, 159, 239, 0.3);
+  --tag-border-width: 2px;
+}

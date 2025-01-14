@@ -1,0 +1,36 @@
+/*
+Syntax highlighting: Dracula Theme
+https://github.com/dracula/dracula-theme
+*/
+
+body, code[class*="language-"], pre[class*="language-"],
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock  {
+	--code-background: #282A36; /* Code background color */
+	--code-white-space: pre-wrap; /* Preserve white spaces */
+	--code-size: 13px; /* Code font size */
+	--code-normal: #D2D9E7; /* Normal text color */
+	--code-comment: #6272A4; /* Comment color */
+
+	--code-function: #FF999A; /* Function color */
+
+	--code-important: #ff79c6; /* Important element color */
+	--code-keyword: #FFBBEE; /* Keyword color */
+	--code-operator: #DB7D99; /* Operator color */
+
+	/* --code-property: #ff79c6; */
+	--code-property: #E7D2A4;  /* Property color */
+	--code-punctuation: #91879A; /* Punctuation color */
+
+	--code-string: #9cd097; /* String color */
+
+	--code-tag: #FFBBEE; /* HTML tag color */
+	--code-value: #A5ADEA; /* Value color */
+}
+
+.markdown-preview-view .token.class-name {
+	color: #eed9ac;
+}
+
+code {
+	font-weight: 350;
+}

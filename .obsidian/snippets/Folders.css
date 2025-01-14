@@ -1,0 +1,29 @@
+:root {
+  --replete-custom-separators-vertical-padding: 6px;
+  --replete-custom-separators-left-margin: -12px;
+}
+
+/* Separator below */
+.nav-files-container [class*=nav-]:has(:is([data-path="sortspec.md"],
+    [data-path="data structures & algorithms"],
+    [data-path="python"]))::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: calc(100% + 32px);
+  background: var(--tab-outline-color);
+  margin: var(--replete-custom-separators-vertical-padding) 0 var(--replete-custom-separators-vertical-padding) var(--replete-custom-separators-left-margin);
+}
+
+
+/* .nav-file-title[data-path$="png"] .nav-file-title-content:before {
+  content: "🖼️";
+  margin-right: 4px;
+} */
+
+
+/*
+  Hide the file tag (.png, .md, etc.)
+.nav-file-tag{
+  display: none;
+}*/

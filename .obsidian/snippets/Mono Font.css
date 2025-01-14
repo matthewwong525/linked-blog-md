@@ -1,0 +1,9 @@
+
+/* change code font */
+.codeFont1.codeFont1.cm-s-obsidian .hmd-fold-html-stub, .codeFont1.cm-s-obsidian .hmd-fold-code-stub, .codeFont1.cm-s-obsidian .cm-inline-code, .codeFont1.cm-s-obsidian .HyperMD-codeblock, .codeFont1.cm-s-obsidian .HyperMD-hr, .codeFont1.cm-s-obsidian .cm-hmd-frontmatter, .codeFont1.cm-s-obsidian .cm-hmd-orgmode-markup, .codeFont1.cm-s-obsidian .cm-formatting-code, .codeFont1.cm-s-obsidian .cm-math, .codeFont1.cm-s-obsidian span.hmd-fold-math-placeholder, .codeFont1.cm-s-obsidian .hmd-fold-html kbd {
+  font-family: "Input Mono", "JetBrains Mono", Menlo;
+}
+
+.codeFont2.cm-s-obsidian .hmd-fold-html-stub, .codeFont2.cm-s-obsidian .hmd-fold-code-stub, .codeFont2.cm-s-obsidian .cm-inline-code, .codeFont2.cm-s-obsidian .HyperMD-codeblock, .codeFont2.cm-s-obsidian .HyperMD-hr, .codeFont2.cm-s-obsidian .cm-hmd-frontmatter, .codeFont2.cm-s-obsidian .cm-hmd-orgmode-markup, .codeFont2.cm-s-obsidian .cm-formatting-code, .codeFont2.cm-s-obsidian .cm-math, .codeFont2.cm-s-obsidian span.hmd-fold-math-placeholder, .codeFont2.cm-s-obsidian .hmd-fold-html kbd {
+  font-family: "Monaspace Neon";
+}

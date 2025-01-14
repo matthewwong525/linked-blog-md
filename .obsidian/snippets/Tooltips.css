@@ -1,0 +1,39 @@
+/* TOOLTIPS FOR <ABBR> */
+abbr[data-title] {
+  /* remove text underline and add border instead */
+  text-decoration: none;
+  cursor: help;
+  /* purple dotted underline */
+  border-bottom: dotted 2.5px #dab3ff;
+  /* everything inside <abbr> that is absolutely positioned will be relative to the <abbr> */
+  position: relative;
+}
+
+abbr[data-title]:hover::after {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  display: flex;
+  width: max-content;
+  padding: 1em;
+  border-radius: 6px;
+  transform: translateY(10px); /* move tooltip down by 10px */
+  /* text */
+  content: attr(data-title);
+  font-weight: 450;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.theme-light abbr[data-title]:hover::after {
+  /* styling */
+  box-shadow: 0 0 .5em #333;
+  background-color: #4e4a4a;
+  color: white;
+}
+
+.theme-dark abbr[data-title]:hover::after {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}

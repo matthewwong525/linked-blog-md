@@ -1,0 +1,196 @@
+{
+  "wrapperTags": [
+    {
+      "id": "w1736305766200",
+      "name": "Aside Note",
+      "startTag": "<aside>",
+      "endTag": "</aside>"
+    },
+    {
+      "id": "w1736305622325",
+      "name": "Aside Text",
+      "startTag": "<span id=\"aside\">",
+      "endTag": "</span>"
+    },
+    {
+      "id": "w1735497855354",
+      "name": "Bold",
+      "startTag": "<b>",
+      "endTag": "</b>"
+    },
+    {
+      "id": "w1735543868619",
+      "name": "Bold Blue",
+      "startTag": "<b><font color=\"#088EB9\">",
+      "endTag": "</font></b>"
+    },
+    {
+      "id": "w1735543918679",
+      "name": "Bold Purple",
+      "startTag": "<b><font color=\"#8a5cf4\">",
+      "endTag": "</font></b>"
+    },
+    {
+      "id": "w1735543929749",
+      "name": "Bold Red",
+      "startTag": "<b><font color=\"#d83931\">",
+      "endTag": "</font></b>"
+    },
+    {
+      "id": "w1735497889435",
+      "name": "Emphasis",
+      "startTag": "<em>",
+      "endTag": "</em>"
+    },
+    {
+      "id": "w1736392108328",
+      "name": "Gray Span",
+      "startTag": "<span style=\"color:rgb(204, 204, 204)\">",
+      "endTag": "</span>"
+    },
+    {
+      "id": "w1735543958388",
+      "name": "Highlight Blue",
+      "startTag": " <mark class=\"blue\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735545398104",
+      "name": "Highlight Gray",
+      "startTag": "<mark class=\"grey\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735545691661",
+      "name": "Highlight Green",
+      "startTag": "<mark class=\"green\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774513478",
+      "name": "Highlight Muted Blue",
+      "startTag": "<mark class=\"muted-blue\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774593125",
+      "name": "Highlight Muted Gray",
+      "startTag": "<mark class=\"muted-grey\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774499912",
+      "name": "Highlight Muted Green",
+      "startTag": "<mark class=\"muted-green\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774486796",
+      "name": "Highlight Muted Orange",
+      "startTag": "<mark class=\"muted-orange\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774578509",
+      "name": "Highlight Muted Pink",
+      "startTag": "<mark class=\"muted-pink\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774531061",
+      "name": "Highlight Muted Purple",
+      "startTag": "<mark class=\"muted-purple\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774567909",
+      "name": "Highlight Muted Red",
+      "startTag": "<mark class=\"muted-red\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1736774449941",
+      "name": "Highlight Muted Yellow",
+      "startTag": "<mark class=\"muted-yellow\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735543988894",
+      "name": "Highlight Orange",
+      "startTag": " <mark class=\"orange\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735545677558",
+      "name": "Highlight Pink",
+      "startTag": "<mark class=\"pink\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735543973191",
+      "name": "Highlight Purple",
+      "startTag": "<mark class=\"purple\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735545652370",
+      "name": "Highlight Red",
+      "startTag": "<mark class=\"red\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735545629248",
+      "name": "Highlight Yellow",
+      "startTag": "<mark class=\"yellow\">",
+      "endTag": "</mark>"
+    },
+    {
+      "id": "w1735497873982",
+      "name": "Italics",
+      "startTag": "<i>",
+      "endTag": "</i>"
+    },
+    {
+      "id": "w1736566980023",
+      "name": "Italics Default",
+      "startTag": "<i class=\"default\">",
+      "endTag": "</i>"
+    },
+    {
+      "id": "w1736112844907",
+      "name": "Maths Text",
+      "startTag": "<span style=\"font-family: 'Source Serif 4'\">",
+      "endTag": "</span>"
+    },
+    {
+      "id": "w1735574808280",
+      "name": "Row",
+      "startTag": "<div class=\"row\">",
+      "endTag": "</div>"
+    },
+    {
+      "id": "w1735546438072",
+      "name": "Subscript",
+      "startTag": "<sub>",
+      "endTag": "</sub>"
+    },
+    {
+      "id": "w1735546452009",
+      "name": "Superscript",
+      "startTag": "<sup>",
+      "endTag": "</sup>"
+    },
+    {
+      "id": "w1735548557731",
+      "name": "Tooltip",
+      "startTag": "<abbr data-title=\"Add description\">",
+      "endTag": "</abbr>"
+    },
+    {
+      "id": "underline",
+      "name": "Underline",
+      "startTag": "<u>",
+      "endTag": "</u>"
+    }
+  ]
+}

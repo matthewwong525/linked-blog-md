@@ -1,0 +1,58 @@
+[
+  {
+    "color": "255, 214, 0",
+    "char": "&",
+    "icon": "lucide-alert-circle"
+  },
+  {
+    "color": "255, 145, 0",
+    "char": "?"
+  },
+  {
+    "color": "255, 23, 68",
+    "char": "!"
+  },
+  {
+    "color": "124, 77, 255",
+    "char": "~"
+  },
+  {
+    "color": "0, 184, 212",
+    "char": "@",
+    "icon": "check-small"
+  },
+  {
+    "color": "0, 200, 83",
+    "char": "$",
+    "icon": "check-small"
+  },
+  {
+    "color": "158, 158, 158",
+    "char": "%",
+    "icon": "lucide-code-2"
+  },
+  {
+    "char": "pros",
+    "color": "118, 194, 108",
+    "icon": "lucide-thumbs-up",
+    "custom": true
+  },
+  {
+    "char": "cons",
+    "color": "216, 73, 80",
+    "icon": "lucide-thumbs-down",
+    "custom": true
+  },
+  {
+    "char": "warn",
+    "color": "240, 150, 55",
+    "icon": "lucide-alert-triangle",
+    "custom": true
+  },
+  {
+    "char": "err",
+    "color": "255, 107, 107",
+    "icon": "lucide-alert-circle",
+    "custom": true
+  }
+]

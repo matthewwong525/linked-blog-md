@@ -1,0 +1,216 @@
+/* For the codeblock customizer plugin: https://github.com/mugiwara85/CodeblockCustomizer */
+:root {
+  /* height of codeblock header */
+  --language-icon-size: 2em;
+  /* padding of codeblock content (obsidian) */
+  --code-padding: 1.25em;
+  /* blue codeblock header background & text color */
+  --blue-header-bg-color: rgb(216, 227, 235);
+  --blue-header-text-color: rgb(84, 130, 163);
+  /* yellow codeblock header background & text color */
+  --yellow-header-bg-color: #f3e2bb;
+  --yellow-header-text-color: rgb(192.1, 144.075, 33.9);
+  /* purple codeblock header background & text color */
+  --purple-header-bg-color: #e4d7e8;
+  --purple-header-text-color: rgb(139, 89, 154);
+  /* grey codeblock header background & text color */
+  --grey-header-bg-color: #ddd;
+  --grey-header-text-color: #777;
+  --code-block-border: #ddd;
+}
+
+body.codeblock-customizer.theme-dark {
+  --codeblock-customizer-highlight-info-color: rgb(192, 192, 192, 0.1) !important;
+  --codeblock-customizer-highlight-info1-color: rgb(192, 192, 192, 0.1) !important;
+  --codeblock-customizer-highlight-success-color: rgb(144, 238, 144, 0.1) !important;
+  --codeblock-customizer-highlight-error-color: rgb(255, 0, 0, 0.2) !important;
+  --codeblock-customizer-highlight-del-color: rgb(255, 0, 0, 0.2) !important;
+  --codeblock-customizer-highlight-warn-color: rgb(255, 128, 0) !important;
+  --codeblock-customizer-highlight-ins-color: rgb(225, 226, 86, 0.2) !important;
+  --codeblock-customizer-highlight-imp-color: rgb(225, 226, 86, 0.2) !important;
+  --codeblock-customizer-codeblock-highlight-color: rgb(225, 226, 86, 0.2) !important;
+  --codeblock-customizer-header-line-color: none !important;
+  --codeblock-customizer-header-background-color: rgb(204, 208, 213, 0.1) !important;
+  --codeblock-customizer-header-text-color: var(--grey-header-text-color) !important;
+  --header-text-color: var(--grey-header-text-color) !important;
+  --codeblock-customizer-header-language-tag-background-color: none !important;
+  --header-language-tag-text-color: var(--grey-header-text-color) !important;
+}
+
+body.codeblock-customizer.theme-light {
+  --header-background-color: var(--grey-header-bg-color) !important;
+  --codeblock-customizer-header-language-tag-background-color: var(--grey-header-bg-color) !important;
+  --header-line-color: none !important;
+  --header-language-tag-background-color: var(--grey-header-bg-color) !important;
+  --header-language-tag-text-color: var(--grey-header-text-color) !important;
+  --codeblock-customizer-header-background-color: var(--grey-header-bg-color) !important;
+}
+
+.markdown-rendered button.codeblock-customizer-copy-code-button {
+  height: 28px !important;
+}
+
+.markdown-source-view .codeblock-customizer-header-button-container {
+  top: 1px;
+}
+
+.codeblock-customizer-button-container,
+.markdown-source-view .codeblock-customizer-header-button-container {
+  height: 100%;
+}
+
+/* --------------------------------------------   */
+/* REMOVE CODEBLOCK HEADER */
+/* --------------------------------------------   */
+/* .codeblock-customizer-header-container, .codeblock-customizer-header-container-specific {
+  display: none !important;
+} */
+
+
+
+
+/* --------------------------------------------   */
+/* SHELL
+/* --------------------------------------------   */
+/* codeblock header */
+.theme-light .codeblock-customizer-language-shell,
+.theme-light .codeblock-customizer-language-shell .codeblock-customizer-header-language-tag {
+  background-color: var(--yellow-header-bg-color);
+  color: var(--yellow-header-text-color);
+  --header-line-color: none;
+}
+
+/* add $ in front of each line */
+.theme-light .codeblock-customizer-line.codeblock-customizer-language-shell:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)>span:first-child:not(.cm-comment)::before,
+.theme-light pre.language-shell.codeblock-customizer-language-shell>code.language-shell>.codeblock-customizer-line>.codeblock-customizer-line-text:not(:has(.comment))::before {
+  content: '$ ';
+  color: #8f5902;
+}
+
+/* --------------------------------------------   */
+/* BASH
+/* --------------------------------------------   */
+/* codeblock header */
+.theme-light .codeblock-customizer-language-bash,
+.theme-light .codeblock-customizer-language-bash .codeblock-customizer-header-language-tag {
+  background-color: var(--yellow-header-bg-color);
+  color: var(--yellow-header-text-color);
+  --header-line-color: none;
+}
+
+.theme-light .codeblock-customizer-line.codeblock-customizer-language-bash > span.cm-def.cm-hmd-codeblock {
+  color: #8f5902;
+}
+
+
+/* --------------------------------------------   */
+/* PYTHON
+/* --------------------------------------------   */
+/* codeblock header */
+.theme-light .codeblock-customizer-language-python,
+.theme-light .codeblock-customizer-language-python .codeblock-customizer-header-language-tag {
+  background-color: var(--blue-header-bg-color);
+  color: var(--blue-header-text-color);
+  --header-line-color: none;
+}
+
+/* ">>>" prompts  */
+.theme-light code.language-python>div>div>.token.operator+.token.operator {
+  color: #8f5902 !important;
+}
+
+/* "... " prompts  */
+.theme-light code.language-python>div>div>.token.punctuation+.token.punctuation+.token.punctuation {
+  color: #8f5902 !important;
+}
+
+/* --------------------------------------------   */
+/* C
+/* --------------------------------------------   */
+.theme-light .codeblock-customizer-language-c,
+.theme-light .codeblock-customizer-language-c .codeblock-customizer-header-language-tag {
+  background-color: var(--purple-header-bg-color);
+  color: var(--purple-header-text-color);
+  --header-line-color: none;
+}
+
+/*----------------------------------------------------------------
+DEFAULT TEXT HIGHLIGHTING
+----------------------------------------------------------------*/
+.codeblock-customizer-line-highlighted,
+.codeblock-customizer-highlighted-text {
+  border-radius: 3px;
+  padding: 0.1em;
+  margin: 0 -0.1em; /* -ve margin negates/removes the padding (left/right) */
+}
+
+.theme-light .codeblock-customizer-line-highlighted,
+.theme-light .codeblock-customizer-highlighted-text {
+  background-color: rgb(255, 238, 178) !important;
+}
+
+
+
+/*----------------------------------------------------------------
+REMOVE CODEBLOCK HEADER IF LANGUAGE IS PY
+----------------------------------------------------------------*/
+.markdown-rendered pre.codeblock-customizer-language-py > .codeblock-customizer-language-py {
+  display: none !important;
+}
+
+.markdown-rendered pre.codeblock-customizer-language-py {
+  border: 1px solid var(--code-block-border);
+}
+
+/*----------------------------------------------------------------
+CODEBLOCKS IN OBSIDIAN COLUMNS
+----------------------------------------------------------------*/
+.markdown-source-view .block-language-col pre,
+.markdown-rendered .block-language-col pre {
+  border: 1px solid var(--code-block-border);
+  padding: 0;
+}
+
+.markdown-source-view .block-language-col pre button.copy-code-button,
+.markdown-rendered .block-language-col pre button.copy-code-button {
+  margin-top: 0;
+  height: 2.3em;
+}
+
+.markdown-source-view .block-language-col pre code,
+.markdown-rendered .block-language-col pre code {
+  border-radius: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.markdown-source-view .block-language-col pre.language-html code,
+.markdown-source-view .block-language-col pre.language-css code,
+.markdown-rendered .block-language-col pre.language-html code,
+.markdown-rendered .block-language-col pre.language-css code {
+  border-top: 1px solid var(--code-block-border);
+}
+
+.markdown-source-view .block-language-col pre.language-html::before,
+.markdown-rendered .block-language-col pre.language-html::before {
+  content: 'HTML';
+  font-weight: bold;
+  color: rgb(119, 119, 119);
+  font-family: var(--font-text);
+  font-size: 0.8em;
+  background-color: rgb(221, 221, 221);
+  display: block;
+  padding: 0.1em 1em;
+}
+
+.markdown-source-view .block-language-col pre.language-css::before,
+.markdown-rendered .block-language-col pre.language-css::before {
+  content: 'CSS';
+  font-weight: bold;
+  color: rgb(119, 119, 119);
+  font-family: var(--font-text);
+  font-size: 0.8em;
+  background-color: rgb(221, 221, 221);
+  display: block;
+  padding: 0.1em 1em;
+}

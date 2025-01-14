@@ -1,0 +1,28 @@
+/* --------------------------------------------   */
+/* Make column content scrollable on the x-axis
+/* --------------------------------------------   */
+/* .columnScroll div.block-language-col > div.columnParent .columnChild {
+  overflow-x: auto;
+  white-space: nowrap;
+} */
+
+.column-nowrap.first-col .columnParent .columnChild:first-child{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.column-nowrap.second-col .columnParent .columnChild:nth-child(2){
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.columnParent .columnChild ol,
+.columnParent .columnChild ul {
+  margin-inline-start: -1em;
+  margin-block-start: unset;
+}
+
+/* Decrease padding for blockquotes in columns */
+.columnParent .columnChild blockquote {
+  padding-inline-start: 1em; /* default is 24px */
+}

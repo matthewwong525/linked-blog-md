@@ -1,0 +1,77 @@
+/*
+=========================
+=======Defaults=======
+=========================
+*/
+
+.theme-dark .cm-s-obsidian span.cm-inline-code,
+.theme-dark .markdown-rendered code {
+  color: rgb(230, 133, 181);
+}
+
+.theme-dark .markdown-rendered pre.codeblock-customizer-pre code {
+  color: unset !important;
+}
+/* 
+pre.codeblock-customizer-pre code
+*/
+/* editing view for inline code links */
+.cm-s-obsidian span.cm-inline-code > a {
+  color: unset;
+}
+
+/* preview/reading view for inline code links */
+.markdown-rendered a > code {
+  color: inherit !important;
+}
+
+/*
+=========================
+=======Custom CSS Classes=======
+=========================
+*/
+
+.theme-light .default-code.markdown-rendered :not(pre, a) > code, /* for preview/reading view */
+.theme-light .default-code.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) /* for editing view */
+{
+  background-color: #f2f2f2;
+  color: #716f6e;
+  --codeblock-customizer-inline-code-text-color: #716f6e;
+  --codeblock-customizer-inline-code-background-color: #f2f2f2;
+}
+
+.theme-dark .default-code.markdown-rendered :not(pre, a) > code, /* for preview/reading view */
+.theme-dark .default-code.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) /* for editing view */
+{
+  background-color:  rgb(21, 49, 75);
+  color: rgb(255, 255, 255);
+}
+
+/* --------------------------------------------   */
+/* .purpleCode (purple code)
+/* --------------------------------------------   */
+.purpleCode.cm-s-obsidian span.cm-inline-code,
+.purpleCode.markdown-rendered code:not([class*="language-"])
+{
+  background-color: rgba(142, 150, 170, .14);
+  --codeblock-customizer-inline-code-background-color: rgba(142, 150, 170, .14);
+  color: #3451b2;
+}
+
+/* --------------------------------------------   */
+/* .pinkCode
+/* --------------------------------------------   */
+.pinkCode.markdown-rendered :not(pre, a) > code, /* for preview/reading view */
+.pinkCode.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) /* for editing view */
+{
+  color: #F06292;
+  --codeblock-customizer-inline-code-text-color: #F06292;
+}
+
+.redCode.markdown-rendered :not(pre, a) > code, /* for preview/reading view */
+.redCode.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) /* for editing view */
+{
+  color: #c7254e;
+  --codeblock-customizer-inline-code-text-color: #c7254e;
+  background-color: #f9f2f4;
+}

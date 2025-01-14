@@ -1,0 +1,79 @@
+/***********************************************
+ * Folder Icons
+ * SVG to Data URI converter: https://codepen.io/elliz/pen/ygvgay
+/***********************************************/
+
+/* remove indentation guide */
+body {
+  --nav-indentation-guide-width: unset;
+}
+
+.nav-folder-title {
+  font-weight: bold;
+}
+
+/* 1st level */
+.nav-folder:not(.mod-root) .nav-folder-title-content::before {
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  margin-right: 5px;
+  vertical-align: text-bottom;
+  height: 15px;
+  width: 15px;
+  background-color: rgb(182, 85, 146);
+}
+
+/* 2nd level */
+.nav-folder-children .nav-folder:not(.mod-root).is-collapsed .nav-folder-title-content::before,
+.nav-folder-children .nav-folder:not(.mod-root):not(.is-collapsed) .nav-folder-title-content::before {
+  background-color: #E0ACF3;
+}
+
+.nav-folder:not(.mod-root):not(.is-collapsed) .nav-folder-title-content::before {
+  -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 512 512' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ctitle%3efolder-open-outline%3c/title%3e%3cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='folder-open' fill='%23000000' transform='translate(42.666667, 85.333333)'%3e%3cpath d='M384,128 L384,42.6666667 L232.0416,42.6666667 L178.0832,1.42108547e-14 L7.10542736e-15,1.42108547e-14 L7.10542736e-15,341.333333 L60.9376,341.333333 L352.437547,341.333333 L361.604267,341.333333 L426.354347,128 L384,128 Z M42.6666667,253.44 L42.6666667,42.6666667 L163.24992,42.6666667 L217.20832,85.3333333 L341.333333,85.3333333 L341.333333,128 L82.0209067,128 L42.6666667,253.44 Z M329.979093,298.666667 L73.1874133,298.666667 L113.354027,170.666667 L368.812373,170.666667 L329.979093,298.666667 Z' id='Shape'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e") no-repeat;
+  -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-open'%3e%3cpath d='m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2'/%3e%3c/svg%3e") no-repeat;
+}
+
+.nav-folder:not(.mod-root).is-collapsed .nav-folder-title-content::before {
+  -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 512 512' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ctitle%3efolder-outline%3c/title%3e%3cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='folder' fill='%23000000' transform='translate(42.666667, 85.333333)'%3e%3cpath d='M426.666667,341.333333 L3.55271368e-14,341.333333 L3.55271368e-14,1.42108547e-14 L178.083413,1.42108547e-14 L232.041813,42.6666667 L426.666667,42.6666667 L426.666667,341.333333 Z M42.6666667,298.666667 L384,298.666667 L384,85.3333333 L217.20832,85.3333333 L163.24992,42.6666667 L42.6666667,42.6666667 L42.6666667,298.666667 Z' id='Shape'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e") no-repeat;
+  /* -webkit-mask:  url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-heart'%3e%3cpath d='M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v1.5'/%3e%3cpath d='M13.9 17.45c-1.2-1.2-1.14-2.8-.2-3.73a2.43 2.43 0 0 1 3.44 0l.36.34.34-.34a2.43 2.43 0 0 1 3.45-.01c.95.95 1 2.53-.2 3.74L17.5 21Z'/%3e%3c/svg%3e") no-repeat; */
+  -webkit-mask: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder'%3e%3cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3e%3c/svg%3e") no-repeat;
+}
+
+/*
+.nav-file-title[data-path$="png"] .nav-file-title-content:before {
+  display: inline-block;
+  content: "";
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3c!--!Font Awesome Free 6.7.2 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--%3e%3cpath fill='rgb(138, 145, 153)' d='M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6l96 0 32 0 208 0c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z'/%3e%3c/svg%3e");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: text-bottom;
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+} */
+
+/*
+.nav-file-title .nav-file-tag {
+  color: #E0ACF3;
+  font-weight: 700;
+  text-transform: lowercase;
+  display: inline-block;
+  border: 1px solid #E0ACF3;
+  padding: 0 0.4em;
+}
+*/
+.nav-file-tag {
+  display: none;
+}
+
+/* Reverse the direction of the file title */
+.nav-file-title {
+  margin-right: 10px;
+  flex-direction: row-reverse;
+}
+
+[data-type="starred"] .nav-file-title {
+  flex-direction: row;
+}

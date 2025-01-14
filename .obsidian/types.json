@@ -1,0 +1,15 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "properties": "checkbox",
+    "stable": "checkbox",
+    "in-place": "checkbox",
+    "status": "text",
+    "topics": "multitext",
+    "starred": "checkbox",
+    "favourite": "checkbox",
+    "difficulty": "text"
+  }
+}

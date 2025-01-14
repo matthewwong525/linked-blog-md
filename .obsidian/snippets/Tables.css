@@ -1,0 +1,287 @@
+/* --------------------------------------------   */
+/* Defaults
+/* --------------------------------------------   */
+
+/* Hide the blank line above tables */
+.cm-line:has(+ .cm-embed-block.cm-table-widget) br {
+  display: none;
+}
+
+/*
+=========================
+=======Customizers=======
+=========================
+*/
+
+/* --------------------------------------------   */
+/* Give first column a different background color
+/* --------------------------------------------   */
+.table-header-col tbody td:first-child,
+.table-header-col thead th:first-child {
+  background-color: rgb(247, 244, 243);
+}
+
+
+/* --------------------------------------------   */
+/* Table header
+/* --------------------------------------------   */
+.table-header-grey thead {
+  background-color: #f2f2f2;
+}
+
+.table-header thead {
+  background-color: rgb(247, 244, 243);
+}
+
+/* --------------------------------------------   */
+/* Fix column width to content
+/* --------------------------------------------   */
+.col-fit-content.first-col table>tbody>tr>td:first-child {
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.col-fit-content.second-col table>tbody>tr>td:nth-child(2) {
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.col-fit-content.third-col table>tbody>tr>td:nth-child(3) {
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.col-fit-content.fourth-col table>tbody>tr>td:nth-child(4) {
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------   */
+/* Centered text (both x and y axis)
+/* --------------------------------------------   */
+.table-centered.table-header th {
+  text-align: center;
+  vertical-align: center;
+}
+
+.table-centered.first-col td:first-child {
+  text-align: center;
+  vertical-align: center;
+}
+
+.table-centered.second-col td:nth-child(2) {
+  text-align: center;
+  vertical-align: center;
+}
+
+.table-centered.third-col td:nth-child(3) {
+  text-align: center;
+  vertical-align: center;
+}
+
+.table-centered.fourth-col td:nth-child(4) {
+  text-align: center;
+  vertical-align: center;
+}
+
+
+/* --------------------------------------------   */
+/* Rounded table corners
+/* --------------------------------------------   */
+
+.table-rounded.markdown-preview-view table,
+.table-rounded.markdown-source-view.mod-cm6 table {
+  border-collapse: separate;
+  border: solid var(--table-border-color) var(--table-border-width);
+  border-radius: 6px;
+  border-spacing: 0px;
+}
+
+.table-rounded table > tbody > tr:last-child > td {
+  border-bottom: thin var(--table-border-color);
+}
+
+/* first column first cell (top left) */
+.table-rounded table th:first-of-type {
+  border-top-left-radius: 6px;
+}
+
+/* last column first cell (top right) */
+.table-rounded table th:last-of-type {
+  border-top-right-radius: 6px;
+}
+
+/* last row first cell */
+.table-rounded table tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+/* last row last cell */
+.table-rounded table tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+/*
+=========================
+======Table styles=======
+=========================
+*/
+
+/* --------------------------------------------   */
+/* Array-like table
+/* only 2 rows:
+/* (1) top row for array values,
+/* (2) bottom row for array indexes
+/* --------------------------------------------   */
+
+
+/* rounded corners ---------------------------   */
+
+/* IGNORE IF TABLE HAS MORE THAN 3 ROWS */
+
+.table-array.markdown-preview-view table,
+.table-array.markdown-source-view.mod-cm6 table {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+.table-array table thead tr > th:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 2px solid var(--text-normal);
+}
+
+.table-array table thead tr > th:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 2px solid var(--text-normal);
+}
+
+.table-array table thead tr > th {
+  border: 2px solid var(--text-normal);
+  border-left: 1px solid var(--text-normal);
+  border-right: 1px solid var(--text-normal);
+}
+
+/* still show the second row borders but make them less visible */
+.table-array tbody tr,
+.table-array tbody tr td {
+  --table-border-width: 0.5px;
+  color: var(--text-muted);
+}
+
+/* remove borders from the second row in preview mode */
+.table-array.markdown-preview-view tbody tr,
+.table-array.markdown-preview-view tbody tr td {
+  border: none;
+}
+
+/* --------------------------------------------   */
+.table-array thead {
+  background-color: white;
+}
+
+.table-array td,
+.table-array th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-array.markdown-preview-view th,
+.table-array.markdown-preview-view td {
+  padding: 10px 0px;
+  min-width: 50px;
+}
+
+.table-array.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: 10px 0px;
+}
+
+.table-array.markdown-preview-view td:first-child,
+.table-array.markdown-preview-view th:first-child,
+.table-array.markdown-source-view.mod-cm6 td:first-child,
+.table-array.markdown-source-view.mod-cm6 th:first-child {
+  padding-inline-start: 0px;
+}
+
+.table-array.markdown-preview-view td:last-child,
+.table-array.markdown-preview-view th:last-child,
+.table-array.markdown-source-view.mod-cm6 td:last-child,
+.table-array.markdown-source-view.mod-cm6 th:last-child {
+  padding-inline-end: 0px;
+}
+
+/* cell bg color -------------------------------  */
+
+/* red highlight */
+.table-array .table-cell-wrapper:has(mark),
+.table-array.markdown-rendered table th:has(mark) {
+  background-color: rgb(253, 211, 217);
+}
+
+.table-array .table-cell-wrapper > mark,
+.table-array.markdown-rendered table th > mark {
+  background-color: unset;
+}
+
+/* bright green highlight */
+.table-array .table-cell-wrapper:has(u),
+.table-array.markdown-rendered table th:has(u) {
+  background-color: rgba(179, 255, 179, 0.7);
+}
+
+.table-array .table-cell-wrapper > u,
+.table-array.markdown-rendered table th > u {
+  text-decoration: unset;
+}
+
+/* light green highlight */
+.table-array .table-cell-wrapper:has(em),
+.table-array.markdown-rendered table th:has(em) {
+  background-color: rgba(179, 255, 179, 0.1);
+}
+
+.table-array .table-cell-wrapper > em,
+.table-array.markdown-rendered table th > em {
+  font-style: unset;
+  color: var(--text-normal) !important;
+}
+
+/* red text in second row if the text is bolded */
+.table-array tbody td strong {
+  color: #d83931;
+  font-weight: unset;
+  /* border-bottom: 1px solid #d83931;
+  padding: 0 1px; */
+}
+
+
+/* grey highlight in first row if the text is bolded */
+.table-array thead .table-cell-wrapper:has(strong),
+.table-array.markdown-rendered table th:has(strong) {
+  background-color: rgba(179, 179, 179, 0.05);
+}
+
+/* --------------------------------------------   */
+/* Formatted big table
+/* --------------------------------------------   */
+.table-formatted thead {
+  background-color: rgb(247, 244, 243);
+}
+
+/* Make cells taller (except for the top row) */
+.table-formatted table tr td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+/* Make the header cells taller */
+.table-formatted table tr th {
+  padding: 7px 10px;
+}
+
+/* Center the text in the first column   */
+.table-formatted td:first-child {
+  text-align: center;
+  vertical-align: middle;
+}

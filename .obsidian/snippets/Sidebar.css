@@ -1,0 +1,22 @@
+/* --------------------------------------------   */
+/* Right sidebar
+/* --------------------------------------------   */
+.workspace-leaf-content {
+  /* background-color: #FBF7F5; */
+}
+
+body:not(.sidebar-tabs-underline):not(.sidebar-tabs-index):not(.sidebar-tabs-square) .workspace>.workspace-split:not(.mod-root) .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+  border-top: 1px solid var(--divider-color);
+  /* background-color: rgb(239, 207, 227); */
+}
+
+/* --------------------------------------------   */
+/* Bottom of the sidebar where the vault name is
+/* --------------------------------------------   */
+/* body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  border: 1px solid #e7c7c7;
+  background-color: #fceee9;
+  border-radius: 10px;
+  margin: 10px 0px;
+  width: 95%;
+} */

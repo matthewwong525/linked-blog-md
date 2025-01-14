@@ -1,0 +1,46 @@
+.grayAside aside:before {
+  content: "";
+  font-size: 2.5em;
+  line-height: 0.1em;
+  vertical-align: -0.2em;
+}
+
+.grayAside aside {
+  width: 48%;
+  line-height: 1.75em;
+  padding: 1.25em;
+  margin-left: .75rem;
+  margin-bottom: .75em;
+  position: relative;
+  float: right;
+  border: 2px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  box-shadow: 8px 8px var(--text-faint);
+}
+
+.grayAside aside>p {
+  margin: .5rem;
+}
+
+/*
+  Purple Aside
+*/
+aside {
+  position: relative;
+  float: right;
+  left: 400px;
+  width: 48%;
+  border: 1px solid lightgrey;
+  padding: 8px;
+  box-shadow: 5px 8px #8272d0;
+  color: black;
+}
+
+.markdown-source-view.mod-cm6 .cm-html-embed:has(aside) {
+  display: inline;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer, 
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width:70%;
+}

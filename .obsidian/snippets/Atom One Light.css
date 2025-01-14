@@ -1,0 +1,86 @@
+/*
+Syntax highlighting: Atom One Light
+https://github.com/atom/atom/blob/master/packages/one-light-syntax/README.md
+
+modified for Python
+*/
+
+/* Available CSS variables:
+body {
+  --code-size: var(--font-smaller);
+  --code-background: var(--background-primary-alt);
+  --code-normal: var(--text-muted);
+  --code-comment: var(--text-faint);
+  --code-function: var(--color-yellow);
+  --code-important: var(--color-orange);
+  --code-keyword: var(--color-pink);
+  --code-property: var(--color-cyan);
+  --code-punctuation: var(--text-muted);
+  --code-string: var(--color-green);
+  --code-tag: var(--color-red);
+  --code-value: var(--color-purple);
+}
+*/
+
+.theme-light body,
+.theme-light code[class*="language-"],
+.theme-light pre[class*="language-"],
+.theme-light .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  --code-background: #fafafa;
+  --code-normal: #383a42;
+  --code-operator: #383a42;
+  --code-comment: #6a737dc7;
+
+  --code-function: #a11c9e;
+  --code-important: #e45649;
+  --code-keyword: #07a;
+  --code-property: #383a42;
+
+  --code-string: #667b68;
+
+  --code-tag: #a626a4;
+  --code-value: #d995a5;
+  --code-punctuation: #999;
+
+}
+
+.theme-light .token.function,
+.theme-light .token.class-name {
+  color: #dd4a68;
+}
+
+.theme-light .token.atrule, 
+.theme-light .token.attr-value, 
+.theme-light .token.keyword {
+  color: #07a;
+}
+
+.theme-light .token.punctuation {
+  color: var(--code-punctuation);
+}
+
+.theme-light .token.builtin {
+  color: #690;
+}
+
+.theme-dark body,
+.theme-dark code[class*="language-"],
+.theme-dark pre[class*="language-"],
+.theme-dark .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  /* --code-background: #282c34; */
+  /* --code-normal: #abb2bf; */
+  /* --code-operator: #c678dd; */
+  --code-comment: #7c8595;
+
+  /* --code-function: #e5c07b; */
+  /* --code-important: #d19a66; */
+  /* --code-keyword: #56b6c2; */
+  /* --code-property: #56b6c2; */
+
+  /* --code-string: #98c379; */
+  /* --code-string: rgb(86, 182, 194); */
+
+  /* --code-tag: #61aeee; */
+  /* --code-value: #61aeee; */
+  /* --code-punctuation: #abb2bf; */
+}

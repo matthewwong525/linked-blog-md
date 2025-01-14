@@ -1,0 +1,237 @@
+/* bullet color */
+:root {
+  --bullet-new-color: rgb(89, 89, 223);
+}
+
+.markdown-preview-view ol>li,
+.markdown-preview-view ul>li,
+.markdown-source-view ol>li,
+.markdown-source-view ul>li,
+.mod-cm6 .HyperMD-list-line.cm-line {
+  --list-spacing: 0.2em;
+  /* default: 0.075em */
+}
+
+.markdown-source-view.mod-cm6 .list-bullet {
+  margin-right: 0.5em;
+}
+
+.theme-dark {
+  --list-marker-color: rgb(255, 174, 252, 0.5);
+}
+
+.cm-s-obsidian .cm-formatting-list {
+  color: var(--list-marker-color) !important;
+}
+
+
+.theme-dark .markdown-reading-view ul>li>.list-bullet:after,
+.theme-dark .markdown-reading-view ul>li>ul>li>.list-bullet:after,
+.theme-dark .markdown-reading-view ul>li>ul>li>ul>li>.list-bullet:after,
+.theme-dark .markdown-reading-view ul>li>ul>li>ul>li>ul>li>.list-bullet:after,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-list-line-1 .list-bullet:after,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet:after,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-list-line-3 .list-bullet:after,
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-list-line-4 .list-bullet:after {
+  background-color: var(-list-marker-color);
+}
+
+/* --------------------------------------------   */
+/* Ordered List
+/* 1. First item
+/*   i. First sub-item
+/*     a. First sub-sub-item
+/*       → First sub-sub-sub-item
+/* --------------------------------------------   */
+
+ol {
+  list-style-type: decimal;
+}
+
+/* LEVEL 2 */
+ol ol li {
+  list-style-type: lower-roman;
+}
+
+/* LEVEL 3 */
+ol ol ol li {
+  list-style-type: lower-alpha;
+}
+
+/* LEVEL 4 */
+ol ol ol ol li[data-line="3"] {
+  list-style-type: "→ ";
+  list-style-position: inside;
+  margin-inline-start: .75em;
+
+}
+
+/* --------------------------------------------   */
+/* Colored Circled Numbers for Ordered List
+/* --------------------------------------------   */
+
+/* Remove all list markers present */
+.circled-list ol li::marker,
+.circled-list ol li::before {
+  content: none;
+}
+
+.circled-list ol {
+  list-style: none;
+  counter-reset: steps;
+}
+
+.circled-list ol > li {
+  counter-increment: steps;
+}
+
+.circled-list ol > li {
+  margin-inline-start: 0em; /* No indentation for the first level */
+}
+
+.circled-list ol ol li {
+  margin-inline-start: var(--list-indent); /* Indentation for the second level */
+}
+
+/* level 1 */
+.circled-list ol > li::before {
+  content: counter(steps);
+  margin-right: 0.5rem;
+  background: #443f6e;
+  color: white;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+}
+
+
+/* level 2 */
+.circled-list ol > li > ol > li::before {
+  background: #bf4e64;
+}
+
+/* level 3 */
+.circled-list ol > li > ol > li > ol > li::before {
+  background: #e06d56;
+}
+
+/* level 4 */
+.circled-list ol > li > ol > li > ol > li > ol > li::before {
+  background: #e8ab2c;
+}
+
+/* level 5 */
+.circled-list ol > li > ol > li > ol > li > ol > li > ol > li::before {
+  background: #f0d769;
+}
+
+/* --------------------------------------------   */
+/* Ordered List: Nested Decimals
+/* 1. First item
+/* 1.1. First sub-item
+/* 1.1.1. First sub-sub-item
+/* --------------------------------------------   */
+.nested-decimals ol {
+  list-style: none;
+  counter-reset: cupcake;
+}
+
+.nested-decimals ol li {
+  counter-increment: cupcake;
+}
+
+.nested-decimals ol li::marker {
+  content: counters(cupcake, ".") ". ";
+}
+
+/* --------------------------------------------   */
+/* Parentheses for Ordered List
+/* (1) First item
+/* (2) Second item
+/* --------------------------------------------   */
+.parentheses-list ol li::marker {
+  content: "(" counter(list-item) ") "; /* Wrap the counter in parentheses */
+}
+
+/* --------------------------------------------   */
+/* Unordered List
+/* --------------------------------------------   */
+/* LEVEL 1 */
+.theme-light .markdown-reading-view ul>li>.list-bullet:after,
+.theme-light .markdown-source-view.mod-cm6 .HyperMD-list-line-1 .list-bullet:after {
+  /* Bullet */
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--bullet-new-color);
+}
+
+
+/* LEVEL 2 */
+.markdown-reading-view ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet:after {
+  /* Hollow Bullet */
+  height: 4px;
+  width: 4px;
+  background-color: Transparent;
+  border-color: var(--bullet-new-color);
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 1px;
+}
+
+/* LEVEL 3 */
+.markdown-reading-view ul>li>ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-3 .list-bullet:after {
+  /* Dash */
+  height: 0.5px;
+  width: 7px;
+  border-radius: 0%;
+  background-color: var(--bullet-new-color);
+}
+
+/* LEVEL 4 */
+.markdown-reading-view ul>li>ul>li>ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-4 .list-bullet:after {
+  /* Solid Square */
+  height: 4px;
+  width: 4px;
+  border-radius: 0%;
+  background-color: var(--bullet-new-color);
+}
+
+/* LEVEL 5 */
+.markdown-reading-view ul>li>ul>li>ul>li>ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-5 .list-bullet:after {
+  /* Dash */
+  height: 0.5px;
+  width: 7px;
+  border-radius: 0%;
+  background-color: var(--bullet-new-color);
+}
+
+/* LEVEL 6 */
+.markdown-reading-view ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-6 .list-bullet:after {
+  /* Hollow Square */
+  height: 4px;
+  width: 4px;
+  background-color: Transparent;
+  border-color: var(--bullet-new-color);
+  border-style: solid;
+  border-radius: 0%;
+  border-width: 1px;
+}
+
+/* LEVEL 7 */
+.markdown-reading-view ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>.list-bullet:after,
+.markdown-source-view.mod-cm6 .HyperMD-list-line-7 .list-bullet:after {
+  /* Small Bullet */
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background-color: var(--bullet-new-color);
+}

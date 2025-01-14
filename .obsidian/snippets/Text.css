@@ -1,0 +1,34 @@
+:root {
+  --font-monospace: Menlo, SFMono-Regular, Consolas, 'Roboto Mono', monospace;
+  --font-monospace-override: Menlo, SFMono-Regular, Consolas, 'Roboto Mono',
+    monospace;
+}
+
+em,
+i,
+.cm-em {
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+/* <i>text</i> */
+i {
+  color: #485dd3;
+  color: #69946d;
+  color: #719f56;
+}
+
+i.default {
+  color: var(--text-normal);
+  font-weight: unset;
+}
+
+/* _text_ and *text* */
+.cm-em, em, em > code {
+  color: #dc3545 !important;
+}
+
+u {
+  text-underline-offset: 0.21em;
+  text-decoration: 1.3px solid underline inherit;
+}

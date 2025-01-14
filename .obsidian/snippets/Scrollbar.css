@@ -1,0 +1,10 @@
+/* Hide all scrollbars */
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+body:is(.native-scrollbars) ::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}

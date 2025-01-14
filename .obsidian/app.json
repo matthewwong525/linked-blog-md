@@ -1,0 +1,16 @@
+{
+  "defaultViewMode": "preview",
+  "attachmentFolderPath": "attachments",
+  "foldHeading": true,
+  "foldIndent": true,
+  "promptDelete": true,
+  "showIndentGuide": false,
+  "strictLineBreaks": false,
+  "spellcheck": true,
+  "showLineNumber": false,
+  "readableLineLength": true,
+  "alwaysUpdateLinks": true,
+  "showRibbon": true,
+  "showInlineTitle": true,
+  "autoConvertHtml": true
+}

@@ -1,0 +1,53 @@
+/* Description List */
+dl {
+    display: block;
+    margin-block-end: 1em;
+    margin-block-start: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+dl > div.row {
+    display: grid;
+    border-bottom: 1px solid var(--text-normal);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(9, 1fr);
+    row-gap: 0.5em;
+}
+
+/* Description List - Term */
+dl > div.row > dt {
+    font-weight: 700;
+    grid-column-end: span 12;
+    grid-template-columns: minmax(0px, 1fr);
+    display: grid;
+    margin: 0;
+}
+
+/* Description List - Details */
+dl > div.row > dd {
+    grid-column-end: span 12;
+    grid-template-columns: minmax(0px, 1fr);
+    display: grid;
+    margin: 0;
+}
+
+dl > div.row span.cm-inline-code {
+    background-color: #f2f2f2 !important;
+    color: #716f6e !important;
+    --codeblock-customizer-inline-code-text-color: #716f6e;
+    --codeblock-customizer-inline-code-background-color: #f2f2f2;
+    padding: 0.1em 0.3em;
+    border-radius: 0.3em;
+    font-family: var(--font-monospace) !important;
+    font-size: 0.9em;
+}
+
+dl > div.row > dt.code {
+    color: #3451b2;
+    font-weight: 500;
+    font-family: var(--font-monospace) !important;
+}
+

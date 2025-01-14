@@ -1,0 +1,1 @@
+[[<% tp.file.cursor() %>|<% tp.system.clipboard() %>]] 

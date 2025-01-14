@@ -1,0 +1,491 @@
+.callout {
+  --callout-padding: 1rem;
+  /* default: 12px 12px 12px 24px */
+}
+
+.callout-title {
+  gap: 8px;
+  /* space between icon and title */
+}
+
+/* make the callout title clickable if it has a collapsible class */
+.callout.is-collapsible>.callout-title {
+  cursor: pointer;
+}
+
+/* reduce the margin between the callout title and the content */
+.callout>.callout-content>*:last-child {
+  margin-bottom: 0.75em !important;
+}
+
+.callout>.callout-content>*:first-child {
+  margin-top: 1em !important;
+}
+
+.callout-icon svg {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+/* --------------------------------------------   */
+/* Basic Callouts
+/* --------------------------------------------   */
+.callout[data-callout='quote'] .callout-title {
+  color: #777777;
+}
+
+.callout[data-callout='alert'] {
+  --callout-icon: lucide-circle-alert;
+  background-color: rgb(249, 58, 55, 0.05);
+  --callout-color: 249, 58, 55;
+}
+
+.callout[data-callout='note'] {
+  --callout-icon: lucide-circle-alert;
+}
+
+.callout[data-callout='info'] {
+  --callout-icon: lucide-info;
+  background-color: rgb(239, 217, 253, 0.5);
+  --callout-color: 59, 46, 88;
+}
+
+.callout[data-callout='cons'] {
+  --callout-color: 238, 93, 108;
+  --callout-icon: thumbs-down;
+}
+
+.callout[data-callout='pros'] {
+  --callout-color: var(--callout-success);
+  --callout-icon: thumbs-up;
+}
+
+.callout[data-callout='problem'] {
+  --callout-color: 238, 93, 108;
+  --callout-icon: lucide-frown;
+}
+
+.callout[data-callout='solution'] {
+  --callout-color: var(--callout-success);
+  --callout-icon: lucide-smile;
+}
+
+.callout[data-callout='tip'] {
+  --callout-color: 5, 75, 22;
+  --callout-icon: lucide-lightbulb;
+  background-color: rgb(223, 246, 221);
+}
+
+.callout[data-callout='summary'] {
+  background: rgb(243, 244, 253);
+  --callout-color: none;
+  --callout-icon: '<svg width="1.5em" height="1.5em" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M34.7409 59.7228L32.9567 58.9094C27.2672 56.3157 20.7328 56.3157 15.0433 58.9094C12.6018 60.0224 9.39163 59.0275 8.44602 56.0621C7.45647 52.9589 5.99975 46.5898 6 35.9997C6.00029 23.5648 8.00803 18.3599 9.11099 16.4196C9.67795 15.4222 10.5255 14.8455 11.2254 14.5264L12.0179 14.1651C19.6351 10.6926 28.4011 10.6738 36 14.1733C43.5989 10.6738 52.3649 10.6926 59.9821 14.1651L60.7746 14.5264C61.4745 14.8455 62.3221 15.4222 62.889 16.4196C63.992 18.3599 65.9997 23.5648 66 35.9997C66.0002 46.5898 64.5435 52.9589 63.554 56.0621C62.6084 59.0275 59.3982 60.0224 56.9567 58.9094C51.2672 56.3157 44.7328 56.3157 39.0433 58.9094L37.2591 59.7228C37.1986 59.7508 37.1373 59.7767 37.0753 59.8004C36.4484 60.0411 35.7556 60.0653 35.1102 59.8648C34.9847 59.8258 34.8613 59.7784 34.7409 59.7228ZM14.5068 19.6246C20.3733 16.9501 27.0874 16.8775 33 19.4067V52.473C26.7613 50.32 19.9378 50.471 13.7811 52.9261C13.0005 49.9843 11.9998 44.547 12 35.9998C12.0002 25.5786 13.4879 21.1893 14.1179 19.8018L14.5068 19.6246ZM39 52.473C45.2387 50.32 52.0622 50.471 58.2189 52.9261C58.9995 49.9843 60.0002 44.547 60 35.9998C59.9998 25.5786 58.5121 21.1893 57.8821 19.8018L57.4932 19.6246C51.6267 16.9501 44.9126 16.8775 39 19.4067V52.473Z" fill="currentColor"></path></svg>';
+
+  &>.callout-title {
+    color: rgb(87, 95, 183);
+  }
+}
+
+.callout[data-callout='warning'] {
+  background: rgb(255, 244, 229);
+  --callout-icon: lucide-triangle-alert;
+  --callout-color: 239, 132, 0;
+}
+
+
+.callout[data-callout='danger'] {
+  --callout-icon: lucide-triangle-alert;
+}
+
+.callout[data-callout='answer'],
+.callout[data-callout='success'] {
+  --callout-icon: lucide-circle-check;
+}
+
+.callout[data-callout='error'] {
+  --callout-icon: lucide-circle-x;
+}
+
+.callout[data-callout='correct'] {
+  --callout-icon: lucide-circle-check;
+}
+
+.callout[data-callout='correct'] .callout-content span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.callout[data-callout='correct'] .callout-content :not(pre, a)>code {
+  color: #3451b2;
+}
+
+.callout[data-callout='notebook'] {
+  background: rgb(244, 251, 249);
+  --callout-color: 43, 110, 98;
+  --callout-icon: '<svg height="1.5em" width="1.5em" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_40_48064)"><path d="M24 27C24 25.3431 25.3431 24 27 24H45C46.6569 24 48 25.3431 48 27C48 28.6569 46.6569 30 45 30H27C25.3431 30 24 28.6569 24 27Z" fill="currentColor"></path><path d="M24 39C24 37.3431 25.3431 36 27 36H39C40.6569 36 42 37.3431 42 39C42 40.6569 40.6569 42 39 42H27C25.3431 42 24 40.6569 24 39Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C12 13.0294 16.0294 9 21 9H51C55.9706 9 60 13.0294 60 18V54C60 58.9706 55.9706 63 51 63H21C16.0294 63 12 58.9706 12 54V18ZM21 15H51C52.6569 15 54 16.3431 54 18V54C54 55.6569 52.6569 57 51 57H21C19.3431 57 18 55.6569 18 54V18C18 16.3431 19.3431 15 21 15Z" fill="currentColor"></path></g><defs><clipPath id="clip0_40_48064"><rect width="72" height="72" fill="white"></rect></clipPath></defs></svg>';
+}
+
+.callout[data-callout='important'] {
+  background: rgb(199, 106, 21, 0.1);
+  background: #FBEDE0;
+  --callout-color: 175, 94, 26;
+  --callout-icon: '<svg height="1.5em" width="1.5em" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_738_836)"><path fill-rule="evenodd" clip-rule="evenodd" d="M27 48L27 57.3409L40.0772 48L55.6975 48C57.1595 48 58.1986 47.0112 58.3851 45.8604C59.1824 40.9398 60 34.619 60 29.625C60 24.7282 59.2125 18.7546 58.4302 14.0813C58.2445 12.9721 57.2326 12 55.7805 12L16.2195 12C14.7674 12 13.7555 12.9721 13.5698 14.0813C12.7875 18.7546 12 24.7282 12 29.625C12 34.619 12.8176 40.9398 13.6149 45.8604C13.8014 47.0112 14.8404 48 16.3025 48H27ZM42 54H55.6975C59.9534 54 63.6271 51.0213 64.3078 46.8201C65.1161 41.8322 66 35.1209 66 29.625C66 24.2196 65.1449 17.8522 64.3478 13.0906C63.6513 8.93026 59.9987 6 55.7805 6H16.2195C12.0013 6 8.34867 8.93026 7.65218 13.0906C6.85505 17.8522 6 24.2196 6 29.625C6 35.1209 6.88391 41.8322 7.69215 46.8201C8.37291 51.0213 12.0466 54 16.3025 54H21L21 63.1704C21 65.6106 23.7581 67.0299 25.7437 65.6116L42 54ZM39 39.3686C39 40.9422 38 41.9912 36 41.9912C34 41.9912 33 40.9422 33 39.3686C33 37.7951 34 36.746 36 36.746C38 36.746 39 37.7951 39 39.3686ZM38.1771 20.2412C38.1771 18.9986 37.1697 17.9912 35.9271 17.9912C34.6845 17.9912 33.6771 18.9986 33.6771 20.2412V31.5956C33.6771 32.8382 34.6845 33.8456 35.9271 33.8456C37.1697 33.8456 38.1771 32.8382 38.1771 31.5956V20.2412Z" fill="currentColor"></path></g><defs><clipPath id="clip0_738_836"><rect width="72" height="72" fill="white"></rect></clipPath></defs></svg>';
+}
+
+/* --------------------------------------------   */
+/* [!<icon>|<color>]
+/* --------------------------------------------   */
+
+/* notifications */
+.callout[data-callout='check'] {
+  --callout-icon: lucide-check;
+}
+
+.callout[data-callout='x'] {
+  --callout-icon: lucide-x;
+}
+
+.callout[data-callout='circle-check'] {
+  --callout-icon: lucide-circle-check;
+}
+
+.callout[data-callout='circle-x'] {
+  --callout-icon: lucide-circle-x;
+}
+
+.callout[data-callout='circle-alert'] {
+  --callout-icon: lucide-circle-alert;
+}
+
+.callout[data-callout='help'] {
+  --callout-icon: lucide-circle-help;
+}
+
+.callout[data-callout='square-check'] {
+  --callout-icon: lucide-square-check;
+}
+
+
+/* statistics */
+.callout[data-callout='chart-increasing'] {
+  --callout-icon: lucide-chart-column-increasing;
+}
+
+.callout[data-callout='chart-decreasing'] {
+  --callout-icon: lucide-chart-column-decreasing;
+}
+
+.callout[data-callout='trend-increasing'] {
+  --callout-icon: lucide-trending-up;
+}
+
+.callout[data-callout='trend-decreasing'] {
+  --callout-icon: lucide-trending-down;
+}
+
+/* maths */
+.callout[data-callout='maths'] {
+  --callout-icon: lucide-radical;
+  --callout-color: 0, 0, 0;
+}
+
+.callout[data-callout='sum'] {
+  --callout-icon: lucide-sigma;
+}
+
+/* time */
+.callout[data-callout='time'] {
+  --callout-icon: lucide-clock-3;
+  background-color: rgb(241, 243, 244);
+  --callout-color: 95, 99, 104;
+}
+
+.callout[data-callout='rewind'] {
+  --callout-icon: lucide-history;
+}
+
+/* coding */
+.callout[data-callout='code'] {
+  --callout-color: 87, 95, 183;
+  --callout-icon: code-xml;
+}
+
+
+.callout[data-callout='function'] {
+  --callout-icon: lucide-square-function;
+}
+
+.callout[data-callout='variable'] {
+  --callout-icon: lucide-variable;
+}
+
+.callout[data-callout='terminal'] {
+  --callout-icon: lucide-square-terminal;
+}
+
+.callout[data-callout='command-line'] {
+  --callout-icon: terminal;
+}
+
+/* file/book icons */
+.callout[data-callout='file-code'] {
+  --callout-icon: lucide-file-code-2;
+}
+
+.callout[data-callout='file-check'] {
+  --callout-icon: lucide-file-check-2;
+}
+
+.callout[data-callout='file-x'] {
+  --callout-icon: lucide-file-x-2;
+}
+
+.callout[data-callout='file-search'] {
+  --callout-icon: lucide-file-search;
+}
+
+.callout[data-callout='file-pen'] {
+  --callout-icon: lucide-file-pen-line;
+}
+
+.callout[data-callout='notebook-pen'] {
+  --callout-icon: lucide-notebook-pen;
+}
+
+.callout[data-callout='bookmark'] {
+  --callout-icon: lucide-book-marked;
+}
+
+/* emoji */
+.callout[data-callout='sad'] {
+  --callout-icon: lucide-frown;
+}
+
+.callout[data-callout='happy'] {
+  --callout-icon: lucide-smile;
+}
+
+.callout[data-callout='laugh'] {
+  --callout-icon: lucide-laugh;
+}
+
+.callout[data-callout='meh'] {
+  --callout-icon: lucide-meh;
+}
+
+/* Shapes */
+.callout[data-callout='heart'] {
+  --callout-icon: lucide-heart;
+}
+
+.callout[data-callout='star'] {
+  --callout-icon: lucide-star;
+}
+
+/* other */
+.callout[data-callout='milestone'] {
+  --callout-icon: lucide-milestone;
+}
+
+.callout[data-callout='calendar'] {
+  --callout-icon: lucide-calendar-fold;
+}
+
+.callout[data-callout='map-pin'] {
+  --callout-icon: lucide-map-pin-check-inside;
+}
+
+.callout[data-callout='pin'] {
+  --callout-icon: lucide-pin;
+}
+
+/* --------------------------------------------   */
+/* [!...|<color>]
+/* --------------------------------------------   */
+.callout[data-callout-metadata*='white'] {
+  background-color: transparent;
+  --callout-color: var(--text-normal);
+}
+
+.callout[data-callout-metadata*='orange'] {
+  --callout-color: 230, 131, 43;
+}
+
+.callout[data-callout-metadata*='green'] {
+  --callout-color: 88,187,137;
+}
+
+.callout[data-callout-metadata*="blue"] {
+  --callout-color: 85,136,255;
+}
+
+.callout[data-callout-metadata*="aqua"] {
+  background: rgb(168, 218, 220, 0.2);
+  --callout-color: 100, 144, 154;
+}
+
+.callout[data-callout-metadata*='purple'] {
+  background-color: rgb(179, 139, 221, 0.1);
+  --callout-color: var(--callout-example);
+}
+
+.callout[data-callout-metadata*='pink'] {
+  background: rgb(225, 137, 177, 0.1);
+  --callout-color: 211, 114, 158;
+}
+
+.callout[data-callout-metadata*='yellow'] {
+  background: rgb(251, 247, 221, 0.6);
+  --callout-color: 191, 155, 48;
+}
+
+.callout[data-callout-metadata*='red'] {
+  --callout-color: var(--callout-bug);
+}
+
+.callout[data-callout-metadata*='gray'],
+.callout[data-callout-metadata*='grey'] {
+  --callout-color: var(--callout-quote);
+  --callout-title-color: rgb(119, 119, 119);
+}
+
+.callout[data-callout-metadata*='black'] {
+  background: rgb(230, 229, 229, 0.6);
+  --callout-color: var(--text-normal);
+}
+
+/* --------------------------------------------   */
+/* [!...|outlined]
+/* --------------------------------------------   */
+.callout[data-callout-metadata*='|outlined'],
+.callout[data-callout-metadata='outlined'] {
+  overflow: visible;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.5;
+  --callout-title-size: 0.8em;
+  --callout-blend-mode: normal;
+  background-color: transparent;
+  margin-top: 1em !important;
+  /* margin-bottom: 1em !important; */
+  /* margin-bottom: 2em !important; */
+}
+
+.callout[data-callout-metadata*='|outlined'] .callout-content>*:first-child,
+.callout[data-callout-metadata='outlined'] .callout-content>*:first-child {
+  margin-top: 0.5em !important;
+}
+
+.callout[data-callout-metadata*='|outlined'] .callout-content>*:last-child,
+.callout[data-callout-metadata='outlined'] .callout-content>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.callout[data-callout-metadata*='|outlined'] .callout-content>*:last-child {
+  margin-bottom: 0.5em !important;
+}
+
+.cm-embed-block.cm-callout:has(.callout[data-callout-metadata='outlined']) {
+  padding-top: 12px;
+}
+
+.callout[data-callout-metadata*='|outlined'] .callout-title,
+.callout[data-callout-metadata='outlined'] .callout-title {
+  padding: 0 0.5em;
+  margin-top: -24px;
+  width: fit-content;
+  margin-left: -0.75em;
+  letter-spacing: 0.05em;
+  background-color: var(--background-primary);
+  text-transform: uppercase;
+  z-index: 200;
+}
+
+/* [!summary|outlined] */
+.callout[data-callout='summary'][data-callout-metadata='outlined'] {
+  border-color: rgb(87, 95, 183);
+}
+
+/* --------------------------------------------   */
+/* [!...|no-margin]
+/* --------------------------------------------   */
+.callout[data-callout-metadata*='no-margin'] {
+  margin: 0 !important;
+}
+
+
+/* --------------------------------------------   */
+/* [!...|no-title]
+/* --------------------------------------------   */
+
+.callout[data-callout-metadata='no-title'] {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+
+  &>.callout-content {
+    flex-grow: 1;
+  }
+}
+
+.callout[data-callout-metadata='no-title'] .callout-title-inner {
+  display: none;
+}
+
+.callout[data-callout-metadata='no-title'] .callout-content>p {
+  margin: 0 !important;
+}
+
+.callout[data-callout-metadata='no-title'] .callout-icon svg {
+  stroke-width: 2.5;
+  height: 1.75rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------   */
+/* [!toggle]
+/* --------------------------------------------   */
+.callout[data-callout='toggle'] {
+  --callout-icon: none;
+  margin: unset;
+  border: unset;
+  border-radius: unset;
+  padding-left: 0;
+  padding-right: 0;
+  background: unset;
+  mix-blend-mode: normal;
+
+  &>.callout-title {
+    color: unset;
+    gap: unset;
+  }
+}
+
+.callout[data-callout='toggle'] .callout-fold .svg-icon {
+  padding-left: 0.2em;
+  stroke-width: 3;
+}
+
+.callout[data-callout='toggle'] .callout-title-inner {
+  font-weight: unset;
+}
+
+/* --------------------------------------------   */
+/* [!div] - use for Obsidian Columns
+/* --------------------------------------------   */
+.callout[data-callout='div'] {
+  margin: unset;
+  border: unset;
+  border-radius: unset;
+  padding: unset;
+  background: unset;
+  mix-blend-mode: normal;
+
+  &>.callout-title {
+    display: none;
+  }
+}
+
+.callout-content .callout[data-callout='div'] {
+  margin: unset !important;
+}
+
+.columnParent,
+div[data-callout='col'].callout>div.callout-content {
+  padding: 0;
+}

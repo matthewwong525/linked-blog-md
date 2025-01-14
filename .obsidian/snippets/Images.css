@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------
+ALIGN IMAGES
+Usage:
+![[example_image.png]] - centre (default)
+![[example_image.png|left|200]] - left
+![[example_image.png|right|200]] - right
+----------------------------------------------------------------*/
+img[alt*='left'] {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+img[alt*='right'] {
+  float: right;
+  clear: right;
+  margin-left: 1rem;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*----------------------------------------------------------------
+IMAGE CAPTIONS
+Usage:
+![[example_image.png|left|200]]
+<i class="figcaption" id="left" style="width:200px""></i>
+----------------------------------------------------------------*/
+.figcaption {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+div .figcaption#left,
+div .figcaption#right,
+div .figcaption#centre,
+div .figcaption#center {
+  display: flex;
+  justify-content: center;
+}
+
+.figcaption#left {
+  clear: left;
+  float: left;
+}
+
+.figcaption#right {
+  clear: right;
+  float: right;
+}
+
+.figcaption#centre,
+.figcaption#center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*----------------------------------------------------------------
+IMAGE EMBEDS
+Usage:
+![[example_image.png|embed|200]]
+----------------------------------------------------------------*/
+.image-embed[alt]:after {
+  content: attr(alt);
+  display: block;
+  margin: 0.5rem 1rem 1rem 1rem;
+  font-size: 90%;
+  line-height: 1.4;
+  color: var(--text-faint);
+}

@@ -1,0 +1,127 @@
+
+.theme-dark{
+    /*----------------------------------------------------------------
+    HIGHLIGHTERS
+    ----------------------------------------------------------------*/
+    /* --yellow-highlighter: rgba(255, 243, 163, 0.651); */
+    --pink-highlighter: rgba(255, 184, 235, 0.651);
+    --red-highlighter: rgba(255, 84, 130, 0.651);
+    --blue-highlighter: #ADCCFFA6;
+    --green-highlighter: #BBFABBA6;
+    --purple-highlighter: #D2B3FFA6;
+    --orange-highlighter: #fdd786d6;
+    --grey-highlighter: #CACFD9A6;
+
+    --yellow-highlighter: rgb(253, 233, 149, 0.2);
+    --pink-highlighter: #FFB8EB80;
+    --blue-highlighter: #ADCCFF80;
+    --green-highlighter: #BBFABB70;
+    --cyan-highlighter: #ABF7F766;
+    --purple-highlighter: #D2B3FF80;
+    --grey-highlighter: #CACFD980;
+
+    --text-highlight-rgb: var(--red-highlighter);
+}
+
+.theme-light{
+    /*----------------------------------------------------------------
+    HIGHLIGHTERS
+    ----------------------------------------------------------------*/
+    --yellow-highlighter: #FFF3A3A6;
+    --pink-highlighter: rgba(255, 184, 235, 0.3);
+    --red-highlighter: rgba(255, 85, 130, 0.2);
+    /* --blue-highlighter: rgb(207, 226, 243); */
+    --blue-highlighter: rgba(173, 204, 255, 0.3);
+    --green-highlighter: rgb(232, 243, 232);
+    --purple-highlighter: rgba(209, 179, 255, 0.3);
+    --orange-highlighter: rgba(253, 215, 134, 0.5);
+    --grey-highlighter: #eeeeee;
+
+    --text-highlight-rgb: var(--yellow-highlighter);
+
+    --muted-yellow-highlighter: rgba(240, 200, 0, 0.2);
+    --muted-orange-highlighter: rgba(240, 107, 5, 0.2);
+    --muted-green-highlighter: rgba(3, 135, 102, 0.14);
+    --muted-blue-highlighter: rgba(5, 117, 197, 0.15);
+    --muted-purple-highlighter: rgba(136, 49, 204, 0.1);
+    --muted-red-highlighter: rgba(245,210,211, 0.6);
+    --muted-pink-highlighter: rgba(218,183,219, 0.3);
+    --muted-grey-highlighter: rgba(140, 140, 140, 0.12);
+}
+
+/*----------------------------------------------------------------
+HIGHLIGHTING (MARK)
+----------------------------------------------------------------*/
+.theme-dark mark,
+.theme-dark .cm-s-obsidian span.cm-highlight {
+  font-weight: 450;
+}
+
+.markdown-preview-view mark {
+    /* font-weight: 450; */
+    background-color: var(--text-highlight-rgb);
+}
+
+.cm-s-obsidian span.cm-highlight {
+    /* font-weight: 450; */
+    color: var(--text-normal);
+    background-color: var(--text-highlight-rgb);
+}
+
+/*----------------------------------------------------------------
+REALISTIC HIGHLIGHT
+----------------------------------------------------------------*/
+mark.yellow{ --text-highlight-rgb: var(--yellow-highlighter); }
+mark.pink{ --text-highlight-rgb: var(--pink-highlighter); }
+mark.blue{ --text-highlight-rgb: var(--blue-highlighter); }
+mark.green{ --text-highlight-rgb: var(--green-highlighter); }
+mark.red{ --text-highlight-rgb: var(--red-highlighter);  }
+mark.grey{ --text-highlight-rgb: var(--grey-highlighter);  }
+mark.orange{ --text-highlight-rgb: var(--orange-highlighter);  }
+mark.red{ --text-highlight-rgb: var(--red-highlighter);  }
+mark.purple{ --text-highlight-rgb: var(--purple-highlighter);  }
+
+mark,
+.markdown-preview-view mark {
+  margin: 0 -0.05em;
+  padding: .1em .25em;
+  border-radius: .25em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background: var(--text-highlight-rgb);
+  color: var(--text-normal);
+  /* font-weight: 450; */
+}
+
+span.cm-highlight {
+  padding: .1em .25em;
+  border-radius: .25em;
+  background: var(--text-highlight-rgb);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+span.cm-formatting-highlight {
+  /* margin: 0 0 0 -0.4em; */
+  background: var(--text-highlight-rgb);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cm-highlight+span.cm-formatting-highlight {
+  background: var(--text-highlight-rgb);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/*----------------------------------------------------------------
+MUTED HIGHLIGHT
+----------------------------------------------------------------*/
+mark.muted-yellow{ --text-highlight-rgb: var(--muted-yellow-highlighter);  }
+mark.muted-orange{ --text-highlight-rgb: var(--muted-orange-highlighter);  }
+mark.muted-green{ --text-highlight-rgb: var(--muted-green-highlighter);  }
+mark.muted-blue{ --text-highlight-rgb: var(--muted-blue-highlighter);  }
+mark.muted-purple{ --text-highlight-rgb: var(--muted-purple-highlighter);  }
+mark.muted-red{ --text-highlight-rgb: var(--muted-red-highlighter);  }
+mark.muted-pink{ --text-highlight-rgb: var(--muted-pink-highlighter);  }
+mark.muted-grey{ --text-highlight-rgb: var(--muted-grey-highlighter);  }

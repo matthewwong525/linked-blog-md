@@ -1,0 +1,8 @@
+/*----------------------------------------------------------------
+BIGGER POPOVERS
+----------------------------------------------------------------*/
+
+.popover.hover-popover > * {
+  --popover-width: 40rem; /* 40rem = 640px; default 450px */
+  --popover-height: 500px; /* 400rem = 6400px; default 400px */
+}

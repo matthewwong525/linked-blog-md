@@ -1,0 +1,249 @@
+{
+  "main": {
+    "id": "78e70933aae83503",
+    "type": "split",
+    "children": [
+      {
+        "id": "32e1c3160a569ed3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7cf4bc8988ac9a80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "home/reference/callouts.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "callouts"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5aeb3104cac9bd6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "911dd804d1a125c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46ea46af20ded374",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "cbd874557b7c77fb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9c3985226949a511",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 247.5
+  },
+  "right": {
+    "id": "cae3a4dd7542f183",
+    "type": "split",
+    "children": [
+      {
+        "id": "3bd627fb42f4f486",
+        "type": "tabs",
+        "dimension": 41.41342756183746,
+        "children": [
+          {
+            "id": "837557ae38ca784c",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "561dcde8b786746f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b67988d74fca3301",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1d1e7415b24571a8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "data structures & algorithms/problems/linked list/Shift (Rotate) a Linked List.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Shift (Rotate) a Linked List"
+            }
+          },
+          {
+            "id": "74d4fb4d6872c032",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "data structures & algorithms/problems/linked list/Shift (Rotate) a Linked List.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Shift (Rotate) a Linked List"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b53e042ff29ceee7",
+        "type": "tabs",
+        "dimension": 58.58657243816254,
+        "children": [
+          {
+            "id": "78f97b9746300193",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "home/reference/callouts.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of callouts"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "78f97b9746300193",
+  "lastOpenFiles": [
+    "remote repo/README.md",
+    "data structures & algorithms/problems/linked list/Delete the Middle Node of a Linked List.md",
+    "remote repo/publish/attachments/vercel-create-token.png",
+    "remote repo/publish/attachments/vercel-project-id.png",
+    "remote repo/publish/attachments/vercel-account-id.png",
+    "remote repo/publish/attachments/publish-dir-yml.png",
+    "remote repo/publish/attachments/how-linked-blog-starter-works.png",
+    "remote repo/publish/attachments/github-secrets-vercel.png",
+    "remote repo/publish/attachments/fork-linked-blog-starter-md.png",
+    "remote repo/publish/attachments/fn-website-demo.gif",
+    "remote repo/publish/attachments/enable-actions-github.png",
+    "remote repo/publish/attachments/disconnect-repo-vercel.png",
+    "remote repo/publish/works-out-of-the-box-with-markdown-files.md",
+    "remote repo/publish/update-publish-settings-github-actions.md",
+    "remote repo/publish/statically-generated.md",
+    "remote repo/publish/reinventing-the-wheel.md",
+    "remote repo/publish/publish-your-obsidian-notes-with-linked-blog-starter.md",
+    "remote repo/publish/linked-blog-starter-does-not-reinvent-wheel.md",
+    "remote repo/publish/install-linked-blog-starter-locally.md",
+    "remote repo/publish/how-linked-blog-starter-works.md",
+    "remote repo/publish/home.md",
+    "remote repo/publish/get-project-id-account-id-and-token-vercel.md",
+    "remote repo/publish/deploy-a-custom-linked-blog-starter.md",
+    "remote repo/publish/connect-obsidian-vault-with-github.md",
+    "remote repo/publish/attachments",
+    "remote repo/publish/accepted-markdown-metadata.md",
+    "remote repo/publish",
+    "remote repo",
+    "data structures & algorithms/problems/linked list/Insert into an Ordered Linked List.md",
+    "data structures & algorithms/problems/linked list/Insert into the n'th Position in a Linked List.md",
+    "data structures & algorithms/problems/linked list/Remove Kth Node From End.md",
+    "data structures & algorithms/problems/linked list/Reverse a Linked List.md",
+    "data structures & algorithms/problems/linked list/Shift (Rotate) a Linked List.md",
+    "home/reference/callouts.md",
+    "data structures & algorithms/problem solving techniques/two pointers.md",
+    "data structures & algorithms/data structures/linked list.md",
+    "data structures & algorithms/problems/recursion/A Plague of Rabbits.md",
+    "data structures & algorithms/problems/linked list/Insert After Max.md",
+    "data structures & algorithms/problems/linked list/Linked List Palindrome.md",
+    "data structures & algorithms/problems/dynamic programming",
+    "data structures & algorithms/problems/binary search trees",
+    "data structures & algorithms/problems/recursion",
+    "data structures & algorithms/problems/array & string",
+    "data structures & algorithms/problems/linked list",
+    "python/built-in modules/collections module",
+    "python/built-in modules",
+    "home/reference/canvas.canvas"
+  ]
+}
